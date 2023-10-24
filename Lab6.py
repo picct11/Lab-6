@@ -1,12 +1,29 @@
 # Lab 6 by Tom Picciano
 
+
 # encoder function
 def encoder_function(password):
     encoded_string = ""
+
     for item in password: # for each value in the given password
-        item = int(item) + 3 # adds the value by 3
+
+        item = int(item) + 3  # adds the value by 3
+
+        if item == 10: # if the password encoded value was 7 + 3 = 10
+            item = 0 # gives a 0
+
+        if item == 11: # if the password encoded value was 8 + 3 = 11
+            item = 1 # gives a 1
+
+
+        if item == 12: # if the password encoded value was 9 + 3 = 12
+            item = 2 # gives a 2
+
         encoded_string += str(item) # adds the value back to the string
+
     return encoded_string # returns the completed string
+
+
 
 # decoder function for partner Tre Huang
 
