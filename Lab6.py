@@ -26,6 +26,24 @@ def encoder_function(password):
 
 
 # decoder function for partner Tre Huang
+def decode_function(encoded_pwd):
+
+    decoded_list = list(encoded_pwd)
+
+    for i in range(len(decoded_list)):
+        decoded_list[i] = int(decoded_list[i])
+
+        if decoded_list[i] in range(3,10):
+            decoded_list[i] = str(decoded_list[i] - 3)
+        elif decoded_list[i] == 2:
+             decoded_list[i] = '9'
+        elif decoded_list[i] == 1:
+            decoded_list[i] = '8'
+        elif decoded_list[i] == 0:
+            decoded_list[i] = '7'
+
+    string_decoded_list = ''.join(decoded_list)
+    return string_decoded_list
 
 
 if __name__ == '__main__':
@@ -48,12 +66,12 @@ if __name__ == '__main__':
             user_password = int(input("Please enter your password to encode: "))
             encoded_password = encoder_function(str(user_password))
             print("Your password has been encoded and stored!")
+            print()
 
         # For Tre decoder functon
         if user_input == 2:
-
-        # implement decoder function
-        print(f'The encoded password is {encoded_password}, and the original password is {}.') # inssert decoder code
+            print(f'The encoded password is {encoded_password}, and the original password is {decode_function(encoded_password)}.')
+            print()
 
 
         if user_input == 3:
