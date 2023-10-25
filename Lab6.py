@@ -49,8 +49,11 @@ if __name__ == '__main__':
             encoded_password = encoder_function(str(user_password))
             print("Your password has been encoded and stored!")
 
+        # For Tre decoder functon
+        if user_input == 2:
 
-        # user_input 2 for partner Tre Huang
+        # implement decoder function
+        print(f'The encoded password is {encoded_password}, and the original password is {}.') # inssert decoder code
 
 
         if user_input == 3:
